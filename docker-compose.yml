@@ -1,0 +1,8 @@
+services:
+  t212:
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/data    # SQLite trade log persisted outside the container
+    # Override CMD to run the scheduler in the background (Phase 2)
+    # command: ["strategy", "watch", "--interval", "15m"]
